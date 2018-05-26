@@ -6,6 +6,10 @@ namespace Keychain {
     class PasswordDictionary {
         private Dictionary<String, LogEntry> mKeychain;
 
+        public PasswordDictionary() {
+            mKeychain = new Dictionary<string, LogEntry>();
+        }
+
         public bool addPassword(LogEntry xEntry) {
             String key = xEntry.getService();
             bool addSuccessful = false;
@@ -33,10 +37,24 @@ namespace Keychain {
             bool isModified = false;
 
             if (mKeychain.ContainsKey(xServiceName)) {
+                isModified = true;
                 LogEntry entry = mKeychain[xServiceName];
                 entry.setPassword(xPassword);
             }
+
+            return isModified;
         }
+
+        public String toString() {
+            StringBuilder log = new StringBuilder();
+
+            foreach (KeyValuePair<String, LogEntry> entry in mKeychain) {
+                log.Append(entry.Key).Append("\t").Append(entry.Value.getPassword());
+            }
+
+            return log.ToString();
+        }
+
 
     }
 }

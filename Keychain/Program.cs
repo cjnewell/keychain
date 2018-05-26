@@ -6,7 +6,9 @@ namespace Keychain
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            PasswordDictionary dictionary = new PasswordDictionary();
+            
+
         }
     }
 }
