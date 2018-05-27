@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using Keychain.Input;
 
-namespace Keychain.Action {
+namespace Keychain {
 
-    class Action {
+    class Command {
 
         private string mName;
 
@@ -14,7 +14,7 @@ namespace Keychain.Action {
             set { mName = value; }
         }
 
-        public Action(string xName) {
+        public Command(string xName) {
             Id = xName;
         }
 

@@ -23,7 +23,5 @@ namespace Keychain.Input {
         public bool isEmpty() {
             return mTokens.Count == 0;
         }
-
-
     }
 }
